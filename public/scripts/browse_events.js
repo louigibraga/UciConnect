@@ -1,12 +1,12 @@
-(function() {
+(window.onload = function() {
 
   const config = {
-    apiKey: "AIzaSyCEGNRoxvcutMOsBQXKYaQUwGDWxUILCig",
-    authDomain: "cs125winter2018.firebaseapp.com",
-    databaseURL: "https://cs125winter2018.firebaseio.com",
-    projectId: "cs125winter2018",
-    storageBucket: "cs125winter2018.appspot.com",
-    messagingSenderId: "626063728861"
+    apiKey: "AIzaSyChWJeABaui_DYZx2fZRbHDkic8d41Y5X8",
+    authDomain: "uciconnect-4f491.firebaseapp.com",
+    databaseURL: "https://uciconnect-4f491.firebaseio.com",
+    projectId: "uciconnect-4f491",
+    storageBucket: "uciconnect-4f491.appspot.com",
+    messagingSenderId: "489906754889"
   };
   firebase.initializeApp(config);
 
@@ -23,8 +23,6 @@
 
 
   dbRefObject.on('value', snap => {
-    document.body.innerHTML = '';
-
     for (var key in snap.val()) {
       var event_div = document.createElement('div');
       event_div.id = key;

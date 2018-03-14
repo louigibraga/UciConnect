@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "uciconnect-4f491"
+    "db_test": "uciconnect-4f491",
+    "staging": "uciconnect-4f491"
   }
 }

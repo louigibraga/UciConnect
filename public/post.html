@@ -1,9 +1,44 @@
+<!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Post an Event</title>
 	<h1>Post an Event!</h1>
+
 </head>
+
 <body>
+
+	<input type="text" id="event_name" 
+		onfocus="if(this.value=='Name') { this.value=''; }" 
+		onfocusout="if(this.value=='') {this.value='Name';}"
+		value="Name"><br>
+	<input type="date" id="event_date"><br>
+	<input type="time" id="event_time"><br>
+	<input type="text" id="event_loc" 
+		onfocus="if(this.value=='Location') { this.value=''; }" 
+		onfocusout="if(this.value=='') {this.value='Location';}"
+		value="Location"><br>
+	<button id="submit_button">Submit</button>
+
+
+	<p><a href="browse.html">Browse all events</a></p> 
+
+<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+<!--
+<script>
+  const config = {
+	  apiKey: "AIzaSyChWJeABaui_DYZx2fZRbHDkic8d41Y5X8",
+	  authDomain: "uciconnect-4f491.firebaseapp.com",
+	  databaseURL: "https://uciconnect-4f491.firebaseio.com",
+	  projectId: "uciconnect-4f491",
+	  storageBucket: "uciconnect-4f491.appspot.com",
+	  messagingSenderId: "489906754889"
+	};
+	firebase.initializeApp(config);
+</script>
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="scripts/post_events.js"></script>
 
 </body>
 </html>
