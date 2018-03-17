@@ -16,16 +16,38 @@ firebase.initializeApp(config);
 
 var rootRef = firebase.database().ref().child('events').push();
 
+
 $('#submit_button').click(function() {
-  rootRef.set({
-    name:$('#event_name').val(),
-    date:$('#event_date').val(),
-    time:$('#event_time').val(),
-    loc:$('#event_loc').val()
-  });
-  location.href = "browse.html";
+  if (checkIfValid()) {
+    rootRef.set({
+      name:$('#event_name').val(),
+      date:$('#event_date').val(),
+      time:$('#event_time').val(),
+      loc:$('#event_loc').val(),
+      tags:$('#event_tags').val()
+    });
+    var hostRef = rootRef.child('eventHost');
+    hostRef.set({
+      contact_info:$('#contact_number').val(),
+      host_name:$('#host_name').val()
+    });
+    location.href = "browse.html";
+  }
 })
 
+function checkIfValid() {
+  var inputs = document.getElementsByTagName('input');
+  for (i=0; i<inputs.length; i++) {
+    if(inputs[i].checkValidity()) {
+      ;
+    }
+    else {
+      alert(inputs[i].id + ": " + inputs[i].validationMessage);
+      return false;
+    }
+  }
+  return true;
+}
 // function submitClick() {
 //   var rootRef = firebase.database().ref();
 //   var eventsPush = rootRef.child('events').push().ref();
@@ -42,5 +64,5 @@ $('#submit_button').click(function() {
   // eventIDref.child('date').set(event_date.value);
   // eventIDref.child('time').set(event_time.value);
   // eventIDref.child("name").set(event_loc.value);
-  console.log("submitClick passed");
+  // console.log("submitClick passed");
   

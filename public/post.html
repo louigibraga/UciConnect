@@ -1,27 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="css/topnav.css">
+
+
 	<title>Post an Event</title>
+
+	<div class="topnav">
+		<a href=index.html>Home</a>
+		<a href=browse.html>Browse</a>
+		<a class="active" href=post.html>Post Events</a>
+		<a href=#profile id="profile">Profile</a>
+	</div>
+
 	<h1>Post an Event!</h1>
 
 </head>
 
 <body>
+	<p><strong>Event Information</strong></p>
+	<label for="event_name">Event Name: </label>
+	<input type="text" id="event_name" required><br>
+	<label for="event_date">Date: </label>
+	<input type="date" id="event_date" required><br>
+	<label for="event_time">Time: </label>
+	<input type="time" id="event_time" required><br>
+	<label for="event_loc">Location: </label>
+	<input type="text" id="event_loc" required><br>
+	<label for="event_tags">Tags: </label>
+	<input type="text" id="event_tags"><br>
 
-	<input type="text" id="event_name" 
-		onfocus="if(this.value=='Name') { this.value=''; }" 
-		onfocusout="if(this.value=='') {this.value='Name';}"
-		value="Name"><br>
-	<input type="date" id="event_date"><br>
-	<input type="time" id="event_time"><br>
-	<input type="text" id="event_loc" 
-		onfocus="if(this.value=='Location') { this.value=''; }" 
-		onfocusout="if(this.value=='') {this.value='Location';}"
-		value="Location"><br>
+	<br>
+
+	<p><strong>Host Information</strong></p>
+	<label for="host_name">Host Name: </label>
+	<input type="text" id="host_name" required><br>
+	<label for="contact_number">Contact Number: </label>
+	<input type="text" id="contact_number"
+	pattern="\d{3}[\-]\d{3}[\-]\d{4}">
+	<label for="contact_number"><sub>Format: 123-456-7890</sub></label><br>
+
 	<button id="submit_button">Submit</button>
 
-
-	<p><a href="browse.html">Browse all events</a></p> 
 
 <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
 <!--

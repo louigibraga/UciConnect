@@ -1,20 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Events</title>
+	<link rel="stylesheet" href="css/topnav.css">
+	<link rel="stylesheet" href="css/browse_style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<title>Browse Events</title>
+
+	<div class="topnav">
+		<a href=index.html>Home</a>
+		<a class="active" href=browse.html>Browse</a>
+		<a href=post.html>Post Events</a>
+		<a href=#profile id="profile">Profile</a>
+	</div>
+
 	<h1>Browse Events</h1>
-  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+
 </head>
 <body>
 
-	<pre id="object">
-	</pre>
+	<input type="text" id="search" onkeyup="search()"placeholder="Search..." name="search">
 
-  <div id="eventList">
-  	<ul id="list">
-  	</ul>
-  </div>
 
+	<table id="head">
+		<tr class="header">
+			<th>Event Name</th>
+			<th>Date</th>
+			<th>Time</th>
+			<th>Location</th>
+			<th>Tags</th>
+			<th>Contact Person</th>
+			<th>Contact Number</th>
+		</tr>
+	</table>
+	<div class="body">
+		<table id="events">
+		</table>
+	</div>
+
+<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
 <script src="scripts/browse_events.js"></script>
 </body>
 </html>

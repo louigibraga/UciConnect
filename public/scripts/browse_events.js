@@ -23,51 +23,99 @@
 
 
   dbRefObject.on('value', snap => {
+
     for (var key in snap.val()) {
-      var event_div = document.createElement('div');
-      event_div.id = key;
+      var event_td_ename = document.createElement('td');
+      var event_td_date = document.createElement('td');
+      var event_td_time = document.createElement('td');
+      var event_td_loc = document.createElement('td');
+      var event_td_tags = document.createElement('td');
+      var event_td_hname = document.createElement('td');
+      var event_td_cphone = document.createElement('td');
+      var event_tr = document.createElement('tr');
+      event_tr.id = key;
 
-      var event_div_title = document.createElement('strong');
-      event_div_title.id = snap.val()[key].name;
-      event_div_title.innerText = snap.val()[key].name;
-      event_div.prepend(event_div_title);
-
-      var event_div_info = document.createElement('ul');
       for (var key2 in snap.val()[key]) {
-        var li = document.createElement('li');
-        li.innerText = key2 + ": " + snap.val()[key][key2];
-        li.id = key2;
-        event_div_info.appendChild(li);
+        if (key2 == "eventHost") {
+          for (var key3 in snap.val()[key][key2]) {
+            if(key3 == "host_name") {
+              event_td_hname.innerText = snap.val()[key][key2][key3];
+              event_td_hname.id = key3;
+            }
+            else {
+              event_td_cphone.innerText = snap.val()[key][key2][key3];
+              event_td_cphone.id = key3;
+            }
+          }
+        }
+        else {
+          if(key2 == "name") {
+            event_td_ename.innerText = snap.val()[key][key2];
+            event_td_ename.id = key2;
+
+          }
+          else if (key2 == "date") {
+            event_td_date.innerText = snap.val()[key][key2];
+            event_td_date.id = key2;
+          }
+          else if (key2 == "time") {
+            event_td_time.innerText = snap.val()[key][key2];
+            event_td_time.id = key2;
+          }
+          else if (key2 == "loc") {
+            event_td_loc.innerText = snap.val()[key][key2];
+            event_td_loc.id = key2;
+          }
+          else if (key2 == "tags") {
+            event_td_tags.innerText = snap.val()[key][key2];
+            event_td_tags.id = key2;
+          }
+          else {
+            ;
+          }
+
+        }
+
       }
-      event_div.appendChild(event_div_info);
-
-      document.getElementsByTagName('body')[0].appendChild(event_div);
+      event_tr.appendChild(event_td_ename);
+      event_tr.appendChild(event_td_date);
+      event_tr.appendChild(event_td_time);
+      event_tr.appendChild(event_td_loc);
+      event_tr.appendChild(event_td_tags);
+      event_tr.appendChild(event_td_hname);
+      event_tr.appendChild(event_td_cphone);
+      document.getElementById("events").appendChild(event_tr);
     }
-  });
-
-
-  // dbRefList.once('value', snap => {
-  //   var eventName = document.createElement('strong');
-  //   eventName.innerText = snap.val().name;
-  //   eventName.id = snap.val().name;
-  //   eventList.prepend(eventName);
-  // });
-
-  // dbRefList.on('child_added', snap => {
-  // 	var li = document.createElement('li');
-  // 	li.innerText = snap.val();
-  //   li.id = snap.key;
-  // 	ulList.appendChild(li);
-  // });
-
-  // dbRefList.on('child_changed', snap => {
-  //   var liChanged = document.getElementById(snap.key);
-  //   liChanged.innerText = snap.val();
-  // })
-
-  // dbRefList.on('child_removed', snap => {
-  //   var liToRemove = document.getElementById(snap.key);
-  //   liToRemove.remove();
-  // })
-
+  })
 }());
+
+function search() {
+  var input = document.getElementById("search");
+  var filter = input.value.toUpperCase();
+  var table = document.getElementById("events");
+  var tr = table.getElementsByTagName("tr");
+
+  //search by event name
+  for (var i=0; i<tr.length; i++) {
+    td1 = tr[i].getElementsByTagName("td")[0];
+    td2 = tr[i].getElementsByTagName("td")[1];
+    td3 = tr[i].getElementsByTagName("td")[2];
+    td4 = tr[i].getElementsByTagName("td")[3];
+    td5 = tr[i].getElementsByTagName("td")[4];
+    td6 = tr[i].getElementsByTagName("td")[5];
+    td7 = tr[i].getElementsByTagName("td")[6];
+    if (td1.innerHTML.toUpperCase().indexOf(filter) > -1 ||
+      td2.innerHTML.toUpperCase().indexOf(filter) > -1 ||
+      td3.innerHTML.toUpperCase().indexOf(filter) > -1 ||
+      td4.innerHTML.toUpperCase().indexOf(filter) > -1 ||
+      td5.innerHTML.toUpperCase().indexOf(filter) > -1 ||
+      td6.innerHTML.toUpperCase().indexOf(filter) > -1 ||
+      td7.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      tr[i].style.display = "";
+    }
+    else {
+      tr[i].style.display = "none";
+    }
+  }
+  
+}
