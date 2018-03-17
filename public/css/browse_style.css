@@ -1,4 +1,4 @@
-#search {
+#searchBar {
 	background-image: url('search-icon.png');
 	background-position: 8px 8px; 
 	background-repeat: no-repeat;
@@ -10,7 +10,43 @@
 	box-sizing: border-box;
 }
 
-#events, #head{
+#events {
+	width: 100%;
+	table-layout: fixed;
+	font-size: 16px;
+	border: 1px solid #ddd;
+	border-collapse: collapse;
+}
+
+#events th, #events td {
+	text-align: left;
+	padding: 12px;
+}
+
+#events thead {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+}
+
+#events tbody {
+	height: 60vh;
+	overflow: auto;
+	display: block;
+	width: 100%;
+}
+
+#events tbody tr {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+}
+
+#events tr.header, #events tr:hover {
+	background-color: #f1f1f1;
+}
+
+/*#events, #head{
 	border-collapse: collapse;
 	width: 100%;
 	border: 1px solid #ddd;
@@ -31,8 +67,7 @@
 	background-color: #f1f1f1;
 }
 
-
 .body {
 	overflow-y: auto;
 	height: 60vh;
-}
+}*/

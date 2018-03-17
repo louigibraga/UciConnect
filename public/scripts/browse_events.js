@@ -84,18 +84,17 @@
       event_tr.appendChild(event_td_tags);
       event_tr.appendChild(event_td_hname);
       event_tr.appendChild(event_td_cphone);
-      document.getElementById("events").appendChild(event_tr);
+      document.getElementById("events_body").appendChild(event_tr);
     }
   })
 }());
 
-function search() {
-  var input = document.getElementById("search");
+function searchTable() {
+  var input = document.getElementById("searchBar");
   var filter = input.value.toUpperCase();
-  var table = document.getElementById("events");
+  var table = document.getElementById("events_body");
   var tr = table.getElementsByTagName("tr");
 
-  //search by event name
   for (var i=0; i<tr.length; i++) {
     td1 = tr[i].getElementsByTagName("td")[0];
     td2 = tr[i].getElementsByTagName("td")[1];
@@ -117,5 +116,4 @@ function search() {
       tr[i].style.display = "none";
     }
   }
-  
 }

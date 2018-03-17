@@ -3,7 +3,6 @@
 <head>
 	<link rel="stylesheet" href="css/topnav.css">
 	<link rel="stylesheet" href="css/browse_style.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 	<title>Browse Events</title>
 
@@ -19,26 +18,45 @@
 </head>
 <body>
 
-	<input type="text" id="search" onkeyup="search()"placeholder="Search..." name="search">
+	<input type="text" id="searchBar" onkeyup="searchTable()"placeholder="Search...">
+
+	<table id="events" class="sortable">
+		<thead>
+			<tr class="header">
+				<th>Event Name</th>
+				<th>Date</th>
+				<th>Time</th>
+				<th>Location</th>
+				<th>Tags</th>
+				<th>Contact Person</th>
+				<th>Contact Phone</th>
+			</tr>
+		</thead>
+		<tbody id="events_body">
+		</tbody>
+	</table>
 
 
-	<table id="head">
-		<tr class="header">
-			<th>Event Name</th>
-			<th>Date</th>
-			<th>Time</th>
-			<th>Location</th>
-			<th>Tags</th>
-			<th>Contact Person</th>
-			<th>Contact Number</th>
-		</tr>
+<!-- 	<table id="head">
+		<thead>
+			<tr class="header">
+				<th onclick="sortTable(0)">Event Name</th>
+				<th onclick="sortTable(1)">Date</th>
+				<th onclick="sortTable(2)">Time</th>
+				<th onclick="sortTable(3)">Location</th>
+				<th onclick="sortTable(4)">Tags</th>
+				<th onclick="sortTable(5)">Contact Person</th>
+				<th onclick="sortTable(6)">Contact Number</th>
+			</tr>s
+		</thead>
 	</table>
 	<div class="body">
-		<table id="events">
+		<table id="events" class="sortable">
 		</table>
-	</div>
+	</div> -->
 
 <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
 <script src="scripts/browse_events.js"></script>
+<script src="scripts/sorttable.js"></script>
 </body>
 </html>
