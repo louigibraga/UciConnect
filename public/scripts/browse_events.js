@@ -87,6 +87,9 @@
       document.getElementById("events_body").appendChild(event_tr);
     }
   })
+
+  var tableHead = document.getElementsByTagName("th")[0];
+  sorttable.innerSortFunction.apply(tableHead, []);
 }());
 
 function searchTable() {

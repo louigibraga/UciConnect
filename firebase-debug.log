@@ -1,0 +1,41 @@
+[debug] [2018-03-17T21:33:37.532Z] ----------------------------------------------------------------------
+[debug] [2018-03-17T21:33:37.536Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\austn\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-03-17T21:33:37.536Z] CLI Version:   3.17.6
+[debug] [2018-03-17T21:33:37.536Z] Platform:      win32
+[debug] [2018-03-17T21:33:37.536Z] Node Version:  v8.9.4
+[debug] [2018-03-17T21:33:37.537Z] Time:          Sat Mar 17 2018 14:33:37 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-03-17T21:33:37.537Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-03-17T21:33:37.557Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-03-17T21:33:37.558Z] > authorizing via signed-in user
+[debug] [2018-03-17T21:33:37.562Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-03-17T21:33:37.563Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/b33j-cvov7UlgofRKjX3Fi_hxEVl9bhQjLBUPgwxjKc',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sat Mar 17 2018 14:33:37 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-03-17T21:33:37.775Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-17T21:33:37.789Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/uciconnect-4f491  
+  
+ Sat Mar 17 2018 14:33:37 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-03-17T21:33:38.132Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-17T21:33:38.134Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/uciconnect-4f491/tokens  
+  
+ Sat Mar 17 2018 14:33:38 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-03-17T21:33:38.515Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-17T21:33:38.517Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/uciconnect-4f491  
+  
+ Sat Mar 17 2018 14:33:38 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-03-17T21:33:38.924Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\austn\Desktop\UciConnect'...
+[info] 
+[debug] [2018-03-17T21:33:38.931Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/489906754889/clients/_:getWebAppConfig  
+  
+ Sat Mar 17 2018 14:33:38 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-03-17T21:33:39.241Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+

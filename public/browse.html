@@ -58,5 +58,9 @@
 <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
 <script src="scripts/browse_events.js"></script>
 <script src="scripts/sorttable.js"></script>
+<script>
+	var tableHead = document.getElementsByTagName("th")[0];
+  sorttable.innerSortFunction.apply(tableHead, []);
+</script>
 </body>
 </html>
