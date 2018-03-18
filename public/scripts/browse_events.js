@@ -26,6 +26,7 @@
 
     for (var key in snap.val()) {
       var event_td_ename = document.createElement('td');
+      var event_td_ename_link = document.createElement('a');
       var event_td_date = document.createElement('td');
       var event_td_time = document.createElement('td');
       var event_td_loc = document.createElement('td');
@@ -50,9 +51,11 @@
         }
         else {
           if(key2 == "name") {
-            event_td_ename.innerText = snap.val()[key][key2];
+            event_td_ename_link.href = "event.html?id=" + key;
+            event_td_ename_link.innerText = snap.val()[key][key2];
+            
+            event_td_ename.appendChild(event_td_ename_link);
             event_td_ename.id = key2;
-
           }
           else if (key2 == "date") {
             event_td_date.innerText = snap.val()[key][key2];
@@ -87,9 +90,6 @@
       document.getElementById("events_body").appendChild(event_tr);
     }
   })
-
-  var tableHead = document.getElementsByTagName("th")[0];
-  sorttable.innerSortFunction.apply(tableHead, []);
 }());
 
 function searchTable() {

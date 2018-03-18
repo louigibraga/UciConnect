@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/topnav.css">
+	<link rel="stylesheet" href="css/event_style.css">
+	<title class="event_name"></title>
+
+	<div class="topnav">
+		<a href=index.html>Home</a>
+		<a class="active" href=browse.html>Browse</a>
+		<a href=post.html>Post Events</a>
+		<a href=#profile id="profile">Profile</a>
+	</div>
+
+	<p><a href="browse.html"><< Back to Browse</a></p>
+	<h1 class="event_name"></h1>
+
+</head>
+<body>
+
+	<ul id="event_info"></ul>
+	<div id="map"></div>
+
+<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+<script src="scripts/single_event.js"></script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABaG6-jL1w-4jd6vvY9gydM7bc6drAvNE&callback=initMap">
+</script>
+</body>
+</html>
