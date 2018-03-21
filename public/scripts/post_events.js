@@ -47,22 +47,3 @@ function checkIfValid() {
     }
   }
   return true;
-}
-// function submitClick() {
-//   var rootRef = firebase.database().ref();
-//   var eventsPush = rootRef.child('events').push().ref();
-//   eventsRef.child('name').set('name_test');
-//   console.log(eventsRef.key);
-//   console.log(eventsRef.value);
-//   console.log(eventsRef.parent);
-  //var eventsData = eventsRef.child('name').set('test');
-  //ref.push().set("test");  
-  // var eventIDref = ref.child('events').push();
-  // var e_name = name.value;
-  // eventIDref.child("name").set('test');
-  //eventIDref.child("name").set(event_name.value);
-  // eventIDref.child('date').set(event_date.value);
-  // eventIDref.child('time').set(event_time.value);
-  // eventIDref.child("name").set(event_loc.value);
-  // console.log("submitClick passed");
-  

@@ -8,7 +8,7 @@
 	display: block;
 	color: black;
 	text-align: center;
-	padding:14px 16px;
+	padding: 14px 16px;
 	text-decoration: none;
 	font-size: 17px;
 }
@@ -23,9 +23,10 @@
 	color: white;
 }
 
-.topnav #profile {
+.topnav #profile{
 	float: right;
 }
+
 
 @media screen and (max-width: 600px) {
     .topnav a, .topnav input[type=text] {

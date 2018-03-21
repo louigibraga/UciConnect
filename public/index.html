@@ -1,36 +1,41 @@
+<!DOCTYPE html>
 <html>
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/topnav.css">
 
 	<title>UCI Connect</title>
-  	<link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-	<link rel="stylesheet" href="style.css"/>
+
+  <div class="topnav">
+    <a class="active" href=index.html>Home</a>
+    <a href=browse.html>Browse</a>
+    <a href=post.html>Post Events</a>
+    <a href=profile.html id="profile">Profile</a>
+  </div>
 
 	<h1>UCI Connect</h1>
 </head>
 <body>
+  <div id="body_div">
+    <div id="login_div" class="main-div">
+      <h3>Log in</h3>
+      <input type="email" placeholder="Peter_Anteater@uci.edu" id="email_field" />
+      <input type="password" placeholder="Zotzotzot123" id="password_field" />
 
-	<a href="browse.html"> View Events</a>
-	<a href="post.html">Post Event</a>
+      <button onclick="login()">Login to Account</button>
+      <p> </p>
+      <a href="signup.html"><button>Sign Up</button></a>
+    </div>
 
-  <div id="login_div" class="main-div">
-    <h3>Log in</h3>
-    <input type="email" placeholder="Peter_Anteater@uci.edu" id="email_field" />
-    <input type="password" placeholder="Zotzotzot123" id="password_field" />
-
-    <button onclick="login()">Login to Account</button>
-    <p> </p>
-    <button onclick="signup()">Sign Up</button>
+    <div id="user_div" class="loggedin-div">
+      <h3>Welcome User</h3>
+      <p id="user_para">Welcome User.</p>
+      <button onclick="logout()">Logout</button>
+      <p> </p>
+      <button id="verify-btn" onclick="send_verification()">Send Verification</button>
+    </div>
   </div>
-
-  <div id="user_div" class="loggedin-div">
-    <h3>Welcome User</h3>
-    <p id="user_para">Welcome User.</p>
-    <button onclick="logout()">Logout</button>
-    <p> </p>
-    <button id="verify-btn" onclick="send_verification()">Send Verification</button>
-  </div>
-
-
 
 </body>
 
@@ -47,7 +52,7 @@
   };
   firebase.initializeApp(config);
 </script>
-<script src="index.js"></script>
+<script src="scripts/index.js"></script>
 </html>
 
 
