@@ -1,9 +1,64 @@
+<!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<link rel="stylesheet" href="css/topnav.css">
+
+
+	<title>Post an Event</title>
+
+	<div class="topnav">
+		<a href=index.html>Home</a>
+		<a href=browse.html>Browse</a>
+		<a class="active" href=post.html>Post Events</a>
+		<a href=profile.html id="profile">Profile</a>
+	</div>
+
 	<h1>Post an Event!</h1>
+
 </head>
+
 <body>
+	<p><strong>Event Information</strong></p>
+	<label for="event_name">Event Name: </label>
+	<input type="text" id="event_name" required><br>
+	<label for="event_date">Date: </label>
+	<input type="date" id="event_date" required><br>
+	<label for="event_time">Time: </label>
+	<input type="time" id="event_time" required><br>
+	<label for="event_loc">Location: </label>
+	<input type="text" id="event_loc" required><br>
+	<label for="event_tags">Tags: </label>
+	<input type="text" id="event_tags"><br>
+
+	<br>
+
+	<p><strong>Host Information</strong></p>
+	<label for="host_name">Host Name: </label>
+	<input type="text" id="host_name" required><br>
+	<label for="contact_number">Contact Number: </label>
+	<input type="text" id="contact_number"
+	pattern="\d{3}[\-]\d{3}[\-]\d{4}">
+	<label for="contact_number"><sub>Format: 123-456-7890</sub></label><br>
+
+	<button id="submit_button">Submit</button>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+<!--
+<script>
+  const config = {
+	  apiKey: "AIzaSyChWJeABaui_DYZx2fZRbHDkic8d41Y5X8",
+	  authDomain: "uciconnect-4f491.firebaseapp.com",
+	  databaseURL: "https://uciconnect-4f491.firebaseio.com",
+	  projectId: "uciconnect-4f491",
+	  storageBucket: "uciconnect-4f491.appspot.com",
+	  messagingSenderId: "489906754889"
+	};
+	firebase.initializeApp(config);
+</script>
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="scripts/post_events.js"></script>
 
 </body>
 </html>

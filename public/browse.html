@@ -1,9 +1,43 @@
+<!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<h1> Browse Events </h1>
+	<link rel="stylesheet" href="css/topnav.css">
+	<link rel="stylesheet" href="css/browse_style.css">
+
+	<title>Browse Events</title>
+
+	<div class="topnav">
+		<a href=index.html>Home</a>
+		<a class="active" href=browse.html>Browse</a>
+		<a href=post.html>Post Events</a>
+		<a href=profile.html id="profile">Profile</a>
+	</div>
+
+	<h1>Browse Events</h1>
+
 </head>
 <body>
 
+	<input type="text" id="searchBar" onkeyup="searchTable()"placeholder="Search...">
+
+	<table id="events" class="sortable">
+		<thead>
+			<tr class="header">
+				<th>Event Name</th>
+				<th>Date</th>
+				<th>Time</th>
+				<th>Location</th>
+				<th>Tags</th>
+				<th>Contact Person</th>
+				<th>Contact Phone</th>
+			</tr>
+		</thead>
+		<tbody id="events_body">
+		</tbody>
+	</table>
+
+<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+<script src="scripts/browse_events.js"></script>
+<script src="scripts/sorttable.js"></script>
 </body>
 </html>

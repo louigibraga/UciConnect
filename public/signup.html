@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/topnav.css">
+
+	<title>Sign Up</title>
+
+	<div class="topnav">
+		<a class="active" href=index.html>Home</a>
+		<a href=browse.html>Browse</a>
+		<a href=post.html>Post Events</a>
+		<a href=profile.html id="profile">Profile</a>
+	</div>
+
+</head>
+<body>
+	<h2>Personal Information</h2>
+	First Name: <input type="text" id="first-name" name="firstname" required><br>
+	Last Name: <input type="text" id="last-name" name="lastname" required><br>
+	Phone Number: <input type="text" id="phone-num" name="phonenum" required><br>
+
+	<h2>Login Information</h2>
+	Email: <input type="text" id="email" name="email" required><br>
+	Password: <input type="password" id="password" name="password" required><br>
+
+	<br><input type="button" onclick="validateFormOnSubmit(this);" value="Submit">
+
+
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+<script src="scripts/signup.js"></script>
+</body>
+</html>
